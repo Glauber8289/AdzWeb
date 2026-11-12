@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADZ PROD | Arte urbana em grande escala</title>
+<meta name="description" content="ADZ PROD: produtora cultural especializada em gestão executiva de projetos de arte urbana, empenas monumentais e curadoria. Diadema e Região Metropolitana de São Paulo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0b12; --bg2:#17121d; --ink:#f6f1f7; --muted:#b9adbf;
+  --pink:#ff1f8f; --purple:#8b3dff; --yellow:#ffd23f; --line:rgba(255,255,255,.12);
+  --display:'Anton',Impact,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.tag{display:inline-block;font-weight:800;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink)}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.01em}
+h2{font-size:clamp(2.4rem,6vw,4.6rem);margin:.4rem 0 1.2rem}
+section{padding:clamp(64px,10vw,120px) 0}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s}
+nav.solid{background:rgba(14,11,18,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--display);font-size:1.7rem;text-decoration:none;letter-spacing:.02em}
+.logo span{color:var(--pink)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{text-decoration:none;font-size:.88rem;font-weight:500;opacity:.85}
+nav ul a:hover{opacity:1;color:var(--pink)}
+.btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;padding:14px 26px;border-radius:999px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#ff47a3}
+.btn.ghost{background:transparent;border:2px solid var(--ink)}
+.menu-btn{display:none;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
+@media (max-width:860px){
+  nav ul{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);padding:8px 16px 16px}
+  nav ul.open{display:flex} nav ul a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block} nav .btn{display:none}
+}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0 0 clamp(48px,8vw,96px)}
+.hero::before{content:"";position:absolute;inset:0;background:url(img/hero-depois.jpg) center/cover;transform:scale(1.04)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,11,18,.35) 0%,rgba(14,11,18,.2) 40%,rgba(14,11,18,.95) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(3.2rem,11vw,9.5rem);max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{max-width:560px;font-size:clamp(1rem,1.6vw,1.2rem);color:#e8dfea;margin:20px 0 32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* STATS */
+.stats{background:var(--pink);padding:36px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat b{display:block;font-family:var(--display);font-size:clamp(2.6rem,6vw,4.4rem);line-height:1;font-weight:400}
+.stat span{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+@media (max-width:700px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* SOBRE */
+.about{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.about-img{position:relative}
+.about-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:62% center;border-radius:6px}
+.about-img::after{content:"ADZ ONE";position:absolute;bottom:-18px;right:-10px;font-family:var(--display);font-size:clamp(3rem,8vw,6rem);color:var(--yellow);transform:rotate(-4deg);text-shadow:4px 4px 0 var(--purple)}
+.about p{color:var(--muted);margin-bottom:16px}
+.about p strong{color:var(--ink)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* SERVIÇOS */
+.services{background:var(--bg2)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:24px}
+.card{border:1px solid var(--line);border-radius:8px;padding:28px 24px;transition:border-color .2s,transform .2s;background:linear-gradient(160deg,rgba(255,31,143,.06),transparent 60%)}
+.card:hover{border-color:var(--pink);transform:translateY(-4px)}
+.card .n{font-family:var(--display);color:var(--pink);font-size:2rem}
+.card h3{font-size:1.5rem;margin:10px 0}
+.card p{font-size:.92rem;color:var(--muted)}
+@media (max-width:980px){.grid4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid4{grid-template-columns:1fr}}
+
+/* PROJETOS */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{background:transparent;color:var(--ink);border:1px solid var(--line);padding:10px 18px;border-radius:999px;font:600 .85rem var(--body);cursor:pointer}
+.filters button.on,.filters button:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{position:relative;overflow:hidden;border-radius:8px;cursor:pointer;aspect-ratio:3/4;background:#222}
+.proj img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj:hover img{transform:scale(1.06)}
+.proj .cap{position:absolute;inset:auto 0 0;padding:60px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.88))}
+.proj .cap small{color:var(--yellow);font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.proj .cap h3{font-size:1.7rem;margin-top:4px}
+.proj .cap p{font-size:.82rem;color:#ddd}
+.proj .count{position:absolute;top:14px;right:14px;background:rgba(0,0,0,.6);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px}
+.proj.hide{display:none}
+@media (max-width:900px){.projects{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.projects{grid-template-columns:1fr}}
+
+/* ANTES / DEPOIS */
+.ba{background:var(--bg2)}
+.compare{position:relative;aspect-ratio:2.06/1;border-radius:8px;overflow:hidden;user-select:none;touch-action:pan-y}
+.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare .after{clip-path:inset(0 0 0 50%)}
+.compare .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.compare .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-weight:800}
+.compare .lbl{position:absolute;top:16px;font:800 .75rem var(--body);letter-spacing:.15em;text-transform:uppercase;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:4px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.ba-text{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:32px}
+.ba-text p{color:var(--muted)}
+@media (max-width:760px){.ba-text{grid-template-columns:1fr;gap:0}.compare{aspect-ratio:4/3}}
+
+/* BRASIL */
+.br-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.br{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:16/10;cursor:pointer}
+.br img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.br:hover img{transform:scale(1.05)}
+.br div{position:absolute;inset:auto 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.br b{font-family:var(--display);font-size:1.4rem;font-weight:400;text-transform:uppercase;display:block}
+.br span{font-size:.8rem;color:#ddd}
+@media (max-width:860px){.br-list{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.br-list{grid-template-columns:1fr}}
+
+/* EDUCAÇÃO */
+.edu{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,5vw,64px);align-items:center}
+.edu-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.edu-gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px;cursor:pointer}
+.edu-gal img:nth-child(2){margin-top:32px}
+.edu ul{list-style:none;margin-top:20px}
+.edu li{padding:14px 0;border-top:1px solid var(--line);color:var(--muted)}
+.edu li b{color:var(--ink);display:block}
+@media (max-width:860px){.edu{grid-template-columns:1fr}}
+
+/* MÍDIA */
+.media{background:var(--bg2)}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video{aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000;position:relative;cursor:pointer}
+.video img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.video::after{content:"▶";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--pink);display:grid;place-items:center;font-size:1.4rem}
+.video iframe{width:100%;height:100%;border:0}
+.videos h3{font-size:1.3rem;margin-top:12px}
+@media (max-width:860px){.videos{grid-template-columns:1fr}}
+
+/* CONTATO */
+.contact{position:relative;text-align:center;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background:url(img/blockparty.jpg) center/cover;opacity:.25}
+.contact .wrap{position:relative}
+.contact h2{font-size:clamp(3rem,9vw,7.5rem)}
+.contact h2 em{font-style:normal;color:var(--pink)}
+.contact p{color:var(--muted);max-width:560px;margin:0 auto 32px}
+.contact .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:.8rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.4);text-decoration:none;font-size:1.6rem}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,6,10,.96);display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 16px 24px}
+.lb.open{display:flex}
+.lb img{max-width:min(1200px,100%);max-height:78vh;object-fit:contain;border-radius:4px}
+.lb .t{margin-top:14px;text-align:center}
+.lb .t b{font-family:var(--display);font-weight:400;font-size:1.6rem;text-transform:uppercase}
+.lb .t span{display:block;color:var(--muted);font-size:.85rem}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.2rem;cursor:pointer;padding:12px}
+.lb .x{top:8px;right:12px}.lb .prev{left:8px;top:50%}.lb .next{right:8px;top:50%}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+.mock{position:fixed;left:12px;bottom:12px;z-index:60;background:var(--yellow);color:#111;font:800 .7rem var(--body);letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">ADZ<span>.</span>PROD</a>
+    <ul id="menu">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#brasil">Artes pelo Brasil</a></li>
+      <li><a href="#educacao">Arte-educação</a></li>
+      <li><a href="#midia">Na mídia</a></li>
+    </ul>
+    <a class="btn" href="#contato">Fale conosco</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">Produtora cultural · Diadema / SP</span>
+    <h1>Galerias <em>a céu aberto</em></h1>
+    <p>Gestão executiva e curadoria de arte urbana em grande escala. Empenas monumentais, festivais e coletivos, com rigor técnico, segurança e impacto no território.</p>
+    <div class="ctas">
+      <a class="btn" href="#projetos">Ver projetos</a>
+      <a class="btn ghost" href="#contato">Solicitar proposta</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b data-n="16">16</b><span>Empenas monumentais</span></div>
+    <div class="stat"><b data-n="100" data-s="+">100+</b><span>Artistas em um só projeto</span></div>
+    <div class="stat"><b data-n="20" data-s="+">20+</b><span>Anos na cultura Hip Hop</span></div>
+    <div class="stat"><b data-n="5">5</b><span>Estados com intervenções</span></div>
+  </div>
+</div>
+
+<section id="sobre">
+  <div class="wrap about">
+    <div class="about-img reveal"><img src="img/andreza-retrato.jpg" alt="Andreza Pascualini (ADZ One) pintando um mural"></div>
+    <div class="reveal">
+      <span class="tag">Quem está por trás</span>
+      <h2>Andreza Lourenço Pascualini</h2>
+      <p><strong>ADZ One</strong> (ou ADZ Mestres) é grafiteira, arte-educadora e produtora cultural, com mais de 20 anos de experiência na cultura Hip Hop. Formada em Marketing e Coordenação Cultural pelo Senac, atua na promoção do graffiti feminino e em projetos de revitalização urbana.</p>
+      <p>À frente da <strong>ADZ PROD</strong>, coordena coletivos, faz curadoria e viabiliza murais de larga escala com rigor administrativo, segurança operacional (NR-35) e excelência estética, com forte atuação em Diadema e na Região Metropolitana de São Paulo.</p>
+      <a class="btn" href="#contato" style="margin-top:12px">Vamos conversar</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="wrap">
+    <span class="tag">O que fazemos</span>
+    <h2>Gestão e curadoria<br>em grandes formatos</h2>
+    <div class="grid4">
+      <div class="card reveal"><div class="n">01</div><h3>Empenas monumentais</h3><p>Produção executiva de pinturas em altura, com logística de andaimes e balancins e equipe certificada NR-35.</p></div>
+      <div class="card reveal"><div class="n">02</div><h3>Curadoria de coletivos</h3><p>Seleção e coordenação de artistas, do mural individual a festivais com mais de 100 participantes.</p></div>
+      <div class="card reveal"><div class="n">03</div><h3>Articulação institucional</h3><p>Parcerias com o poder público, editais (como o MAR) e autorizações em equipamentos culturais.</p></div>
+      <div class="card reveal"><div class="n">04</div><h3>Acessibilidade e sustentabilidade</h3><p>Murais com Braille e audiodescrição, reaproveitamento de materiais e lonas recicladas.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <span class="tag">Portfólio</span>
+    <h2>Projetos</h2>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">Todos</button>
+      <button data-f="empena">Empenas</button>
+      <button data-f="festival">Festivais e coletivos</button>
+      <button data-f="social">Cultura e território</button>
+    </div>
+    <div class="projects" id="projects"></div>
+  </div>
+</section>
+
+<section class="ba" id="antes-depois">
+  <div class="wrap">
+    <div class="ba-text">
+      <div><span class="tag">Transformação</span><h2>Perus, antes<br>e depois</h2></div>
+      <p>Produção das empenas no conjunto habitacional de Perus (SP). Arraste para comparar como o território virou uma galeria a céu aberto.</p>
+    </div>
+    <div class="compare reveal" id="compare">
+      <img src="img/perus-antes.jpg" alt="Conjunto habitacional em Perus antes das empenas">
+      <img class="after" src="img/hero-depois.jpg" alt="Conjunto habitacional em Perus depois das empenas">
+      <span class="lbl" style="left:16px">Antes</span><span class="lbl" style="right:16px">Depois</span>
+      <div class="handle"></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+    </div>
+  </div>
+</section>
+
+<section id="brasil">
+  <div class="wrap">
+    <span class="tag">Circulação nacional</span>
+    <h2>Artes pelo Brasil</h2>
+    <p style="color:var(--muted);max-width:620px;margin-bottom:32px">Participação em festivais e encontros de graffiti em diferentes estados, levando a assinatura ADZ para muros de norte a sul.</p>
+    <div class="br-list" id="brlist"></div>
+  </div>
+</section>
+
+<section id="educacao">
+  <div class="wrap edu">
+    <div class="reveal">
+      <span class="tag">Arte-educação</span>
+      <h2>Graffiti que forma gente</h2>
+      <p style="color:var(--muted)">Oficinas, curadoria e projetos que levam o graffiti para bibliotecas, centros de juventude e equipamentos de saúde.</p>
+      <ul>
+        <li><b>Casa do Hip Hop de Diadema</b>Arte-educadora e curadora de graffiti, incluindo o festival Block Party.</li>
+        <li><b>Oficinas nos CAPS</b>Graffiti como ferramenta de expressão e cuidado.</li>
+        <li><b>Biblioteca Carolina Maria de Jesus</b>Projeto piloto que integra graffiti e acervo literário, base do projeto “Letras em Spray”.</li>
+      </ul>
+    </div>
+    <div class="edu-gal reveal" id="edugal"></div>
+  </div>
+</section>
+
+<section class="media" id="midia">
+  <div class="wrap">
+    <span class="tag">Entrevistas</span>
+    <h2>Na mídia</h2>
+    <div class="videos">
+      <div><div class="video" data-yt="GHlKiUcgT7g" data-t="8"><img src="https://i.ytimg.com/vi/GHlKiUcgT7g/hqdefault.jpg" alt="" loading="lazy"></div><h3>Bate-papo com graffiti</h3></div>
+      <div><div class="video" data-yt="sYYsyp7ZGJg" data-t="2079"><img src="https://i.ytimg.com/vi/sYYsyp7ZGJg/hqdefault.jpg" alt="" loading="lazy"></div><h3>História ADZ</h3></div>
+      <div><div class="video" data-yt="jiJpY_w5oBM" data-t="0"><img src="https://i.ytimg.com/vi/jiJpY_w5oBM/hqdefault.jpg" alt="" loading="lazy"></div><h3>Produção Canindé · Comunidade Tia Corinthians</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <span class="tag">Contato</span>
+    <h2>Seu muro <em>pode virar arte</em></h2>
+    <p>Empenas, festivais, oficinas ou projetos via edital. Conte sua ideia e a ADZ PROD monta a produção completa.</p>
+    <div class="ctas">
+      <a class="btn" href="mailto:andreza.pascualini@gmail.com">andreza.pascualini@gmail.com</a>
+      <a class="btn ghost" href="https://instagram.com/adzonemestres" target="_blank" rel="noopener">@adzonemestres</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>ADZ PRODUTORA E GESTÃO DE PROJETOS · CNPJ 54.675.825/0001-35</span>
+    <span>Diadema · São Paulo</span>
+  </div>
+</footer>
+
+<a class="wa" href="#contato" title="WhatsApp (número a definir)">💬</a>
+<div class="mock">Mockup · versão 1</div>
+
+<div class="lb" id="lb">
+  <button class="x" aria-label="Fechar">✕</button>
+  <button class="prev" aria-label="Anterior">‹</button>
+  <img alt="">
+  <div class="t"><b></b><span></span></div>
+  <button class="next" aria-label="Próxima">›</button>
+</div>
+
+<script>
+const P=[
+ {cat:'empena',t:'Gigante das Ruaz',y:'2024',l:'Perus · SP',d:'Empenas com Preto TNA, Image, Mrncale, ADZ One e Luiz One.',imgs:['gigante-1','gigante-2','gigante-3','gigante-4']},
+ {cat:'empena',t:'Noiz por Noiz',y:'2024/25',l:'Perus e Taipas · SP',d:'Ju Grenfeel, Isheone, Loss, Clayton e Cafézinho, Friday13.',imgs:['noiz-3','noiz-1','noiz-2','noiz-4','noiz-5']},
+ {cat:'empena',t:'Edital MAR',y:'2024/25',l:'Perus e Taipas · SP',d:'Museu de Arte de Rua: articulação dos espaços, produção executiva e de campo. Artistas de SP, Brasília, Bahia e Goiânia.',imgs:['mar-1','mar-2','mar-3','mar-4']},
+ {cat:'empena',t:'Empenas em Diadema',y:'2024',l:'Comunidade Naval · Diadema',d:'Pinturas monumentais na Comunidade Naval.',imgs:['diadema-3','diadema-1','diadema-2']},
+ {cat:'empena',t:'Mães',y:'Autoral',l:'Projeto autoral de empena',d:'Empena autoral em parceria com Paulicéia e Sherwin-Williams.',imgs:['maes-3','maes-1','maes-2']},
+ {cat:'festival',t:'Entre Amigos',y:'2021',l:'CDHU · Francisco Morato',d:'Um dos maiores eventos de street art em empenas do Brasil, reunindo mais de 100 artistas.',imgs:['entre-amigos-1','entre-amigos-2','entre-amigos-3']},
+ {cat:'festival',t:'Block Party',y:'Casa do Hip Hop',l:'Diadema',d:'Curadoria de artistas e coordenação das ações de graffiti durante um mês de festival.',imgs:['hiphop-1','blockparty','hiphop-2','flyer-1','flyer-2']},
+ {cat:'social',t:'Biblioteca Carolina de Jesus',y:'Projeto piloto',l:'Casa do Hip Hop · Diadema',d:'Graffiti integrado ao acervo literário. Prova de conceito do projeto “Letras em Spray”.',imgs:['biblioteca']},
+ {cat:'social',t:'Arte-educação',y:'Oficinas',l:'Casa do Hip Hop e CAPS',d:'Oficinas de graffiti com crianças, jovens e usuários dos CAPS.',imgs:['edu-1','edu-2','edu-3','edu-4','edu-5']},
+];
+const B=[
+ ['brasil-teresina','Teresina · PI','2024 · Ruaz Crew'],
+ ['brasil-curitiba','Curitiba · PR','2024 · De Quebra Tinta'],
+ ['brasil-campinas','Campinas · SP','2024 · Graffiti 1km'],
+ ['brasil-hortolandia','Hortolândia · SP','2023 · Jacuba Fest (Sabesp)'],
+ ['brasil-floripa','Florianópolis · SC','2024 · Agenda Urbana, evento de mulheres'],
+ ['brasil-acre-2','Rio Branco · AC','2024 · Acre Festival'],
+];
+const $=s=>document.querySelector(s), img=n=>`img/${n}.jpg`;
+// projetos
+$('#projects').innerHTML=P.map((p,i)=>`<article class="proj reveal" data-cat="${p.cat}" data-i="${i}">
+ <img src="${img(p.imgs[0])}" alt="${p.t}" loading="lazy"><span class="count">${p.imgs.length} foto${p.imgs.length>1?'s':''}</span>
+ <div class="cap"><small>${p.y} · ${p.l}</small><h3>${p.t}</h3><p>${p.d}</p></div></article>`).join('');
+document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.proj').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.cat!==b.dataset.f));
+});
+$('#brlist').innerHTML=B.map((b,i)=>`<div class="br reveal" data-i="${i}"><img src="${img(b[0])}" alt="${b[1]}" loading="lazy"><div><b>${b[1]}</b><span>${b[2]}</span></div></div>`).join('');
+$('#edugal').innerHTML=['edu-1','edu-4','edu-3'].map(n=>`<img src="${img(n)}" alt="Oficina de graffiti" loading="lazy">`).join('');
+
+// lightbox
+let set=[],k=0;const lb=$('#lb');
+function show(){const s=set[k];lb.querySelector('img').src=img(s.n);lb.querySelector('b').textContent=s.t;lb.querySelector('span').textContent=s.d+(set.length>1?`  (${k+1}/${set.length})`:'');}
+function open(s,i=0){set=s;k=i;show();lb.classList.add('open');document.body.style.overflow='hidden';}
+function close(){lb.classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.proj').forEach(el=>el.onclick=()=>{const p=P[el.dataset.i];open(p.imgs.map(n=>({n,t:p.t,d:p.l})));});
+document.querySelectorAll('.br').forEach(el=>el.onclick=()=>open(B.map(b=>({n:b[0],t:b[1],d:b[2]})),+el.dataset.i));
+document.querySelectorAll('#edugal img').forEach((el,i)=>el.onclick=()=>open(['edu-1','edu-4','edu-3','edu-2','edu-5'].map(n=>({n,t:'Arte-educação',d:'Casa do Hip Hop e CAPS'})),i));
+lb.querySelector('.x').onclick=close;
+lb.querySelector('.prev').onclick=e=>{e.stopPropagation();k=(k-1+set.length)%set.length;show();};
+lb.querySelector('.next').onclick=e=>{e.stopPropagation();k=(k+1)%set.length;show();};
+lb.onclick=e=>{if(e.target===lb)close();};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowRight')lb.querySelector('.next').click();if(e.key==='ArrowLeft')lb.querySelector('.prev').click();});
+
+// antes/depois
+const cmp=$('#compare'),r=cmp.querySelector('input');
+r.oninput=()=>{cmp.querySelector('.after').style.clipPath=`inset(0 0 0 ${r.value}%)`;cmp.querySelector('.handle').style.left=r.value+'%';};
+
+// vídeos
+document.querySelectorAll('.video').forEach(v=>v.onclick=()=>{v.innerHTML=`<iframe src="https://www.youtube.com/embed/${v.dataset.yt}?autoplay=1&start=${v.dataset.t}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;v.style.setProperty('--x','none');v.classList.add('playing');});
+const st=document.createElement('style');st.textContent='.video.playing::after{display:none}';document.head.appendChild(st);
+
+// nav + reveal + contadores
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>40),{passive:true});
+document.querySelectorAll('#menu a').forEach(a=>a.onclick=()=>$('#menu').classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;so.unobserve(e.target);const el=e.target,n=+el.dataset.n,s=el.dataset.s||'';let c=0;const t=setInterval(()=>{c=Math.min(n,c+Math.ceil(n/30));el.textContent=c+s;if(c>=n)clearInterval(t);},30);}));
+document.querySelectorAll('.stat b').forEach(el=>so.observe(el));
+</script>
+</body>
+</html>
